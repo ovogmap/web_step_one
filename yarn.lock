@@ -5939,10 +5939,10 @@
   "resolved" "https://registry.npmjs.org/human-signals/-/human-signals-1.1.1.tgz"
   "version" "1.1.1"
 
-"hyosun-design-system@^1.0.5":
-  "integrity" "sha512-LqXd5lQ8Kkf0f+uWEDxKuN8DpYpMqwkzUAalIjHzRScDkGIIdO2q8fSwczhXzPuLOp4C+KOgPxz20+qRmbHBgA=="
-  "resolved" "https://registry.npmjs.org/hyosun-design-system/-/hyosun-design-system-1.0.5.tgz"
-  "version" "1.0.5"
+"hyosun-design-system@^1.0.6":
+  "integrity" "sha512-IaoWouFndA/z3n3N9qTfx3vdgth8mh+IEICnTrza9jEazhT6dQ2s2PKHGvIUBR8lszNDUFXwLuSRL6foAbMAbw=="
+  "resolved" "https://registry.npmjs.org/hyosun-design-system/-/hyosun-design-system-1.0.6.tgz"
+  "version" "1.0.6"
   dependencies:
     "@emotion/babel-preset-css-prop" "^11.2.0"
     "@emotion/react" "^11.5.0"

@@ -4,8 +4,11 @@ import { Home } from "./pages";
 const AppRouter = () => {
   return (
     <Switch>
-      <Route path="/">
+      <Route exact path="/">
         <Home />
+      </Route>
+      <Route path="/input">
+        <div>input</div>
       </Route>
     </Switch>
   );

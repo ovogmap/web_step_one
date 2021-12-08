@@ -1,10 +1,12 @@
 import styled from "@emotion/styled";
 import AppRouter from "./router";
-
+import { Layout } from "./components";
 function App() {
   return (
     <Container>
-      <AppRouter />
+      <Layout>
+        <AppRouter />
+      </Layout>
     </Container>
   );
 }
