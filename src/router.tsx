@@ -1,5 +1,5 @@
 import { Switch, Route } from "react-router-dom";
-import { Home } from "./pages";
+import { Home, TextEditor } from "./pages";
 
 const AppRouter = () => {
   return (
@@ -7,8 +7,8 @@ const AppRouter = () => {
       <Route exact path="/">
         <Home />
       </Route>
-      <Route path="/input">
-        <div>input</div>
+      <Route path="/text-editor">
+        <TextEditor />
       </Route>
     </Switch>
   );

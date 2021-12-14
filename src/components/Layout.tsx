@@ -4,7 +4,18 @@ import styled from "@emotion/styled";
 import { Button } from "hyosun-design-system";
 import { EColors } from "../globalStyle";
 
-const Layout = ({ children }) => {
+const NavItemList = [
+  {
+    path: "/text-editor",
+    innerText: "텍스트 에디터",
+  },
+];
+
+interface LayoutProps {
+  children: React.ReactNode;
+}
+
+const Layout: React.FC<LayoutProps> = ({ children }) => {
   const [open, setOpen] = useState(false);
 
   const handleOpen = () => setOpen(true);
@@ -22,20 +33,13 @@ const Layout = ({ children }) => {
             <Button label="X" variant="outlined" onClick={handleClose} />
           </header>
           <StyledUl>
-            <StyledLi>
-              <Link to="/input" onClick={handleClose}>
-                인터렉티브 인풋
-              </Link>
-            </StyledLi>
-            <StyledLi>
-              <Link>test2</Link>
-            </StyledLi>
-            <StyledLi>
-              <Link>test3</Link>
-            </StyledLi>
-            <StyledLi>
-              <Link>test4</Link>
-            </StyledLi>
+            {NavItemList.map((item) => (
+              <StyledLi>
+                <Link to={item.path} onClick={handleClose}>
+                  {item.innerText}
+                </Link>
+              </StyledLi>
+            ))}
           </StyledUl>
         </StyledNav>
       </Header>
@@ -93,7 +97,7 @@ const StyledLink = styled(Link)`
   }
 `;
 
-const StyledNav = styled.nav`
+const StyledNav = styled.nav<{ open: boolean }>`
   header {
     display: flex;
     justify-content: flex-end;
