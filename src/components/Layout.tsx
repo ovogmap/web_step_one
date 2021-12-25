@@ -9,6 +9,10 @@ const NavItemList = [
     path: "/text-editor",
     innerText: "텍스트 에디터",
   },
+  {
+    path: "/video-player",
+    innerText: "비디오 플레이어",
+  },
 ];
 
 interface LayoutProps {
@@ -34,7 +38,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
           </header>
           <StyledUl>
             {NavItemList.map((item) => (
-              <StyledLi>
+              <StyledLi key={item.path}>
                 <Link to={item.path} onClick={handleClose}>
                   {item.innerText}
                 </Link>
@@ -68,7 +72,7 @@ const Main = styled.main`
 `;
 
 const Inner = styled.section`
-  width: 960px;
+  min-width: 960px;
   margin: 0 auto;
   padding-top: 20px;
 `;

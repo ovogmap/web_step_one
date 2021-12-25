@@ -1,5 +1,5 @@
 import { Switch, Route } from "react-router-dom";
-import { Home, TextEditor } from "./pages";
+import { Home, TextEditor, VideoPlayer } from "./pages";
 
 const AppRouter = () => {
   return (
@@ -9,6 +9,9 @@ const AppRouter = () => {
       </Route>
       <Route path="/text-editor">
         <TextEditor />
+      </Route>
+      <Route path="/video-player">
+        <VideoPlayer />
       </Route>
     </Switch>
   );

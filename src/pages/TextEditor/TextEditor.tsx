@@ -4,13 +4,13 @@ import { EColors } from "../../globalStyle";
 
 const TextEditorPure = () => {
   const [value, setValue] = useState("");
-  const textRef = useRef<HTMLDivElement | null>(null);
+  // const textRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => console.log(value), [value]);
 
   return (
     <TextCard
-      ref={textRef}
+      // ref={textRef}
       placeholder="텍스트를 입력해 보세요"
       contentEditable={true}
       spellCheck={false}
