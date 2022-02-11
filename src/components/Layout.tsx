@@ -13,6 +13,10 @@ const NavItemList = [
     path: "/video-player",
     innerText: "비디오 플레이어",
   },
+  {
+    path: "/calendar",
+    innerText: "달력",
+  },
 ];
 
 interface LayoutProps {

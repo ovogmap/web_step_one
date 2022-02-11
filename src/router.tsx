@@ -1,5 +1,5 @@
 import { Switch, Route } from "react-router-dom";
-import { Home, TextEditor, VideoPlayer } from "./pages";
+import { Home, TextEditor, VideoPlayer, Calendar } from "./pages";
 
 const AppRouter = () => {
   return (
@@ -12,6 +12,9 @@ const AppRouter = () => {
       </Route>
       <Route path="/video-player">
         <VideoPlayer />
+      </Route>
+      <Route path="/calendar">
+        <Calendar />
       </Route>
     </Switch>
   );
