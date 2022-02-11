@@ -13,6 +13,7 @@
     "@types/react": "^17.0.37",
     "@types/react-dom": "^17.0.11",
     "@types/react-router-dom": "^5.3.2",
+    "dayjs": "^1.10.7",
     "hyosun-design-system": "^1.0.6",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
@@ -44,5 +45,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@types/lodash": "^4.14.178"
   }
 }

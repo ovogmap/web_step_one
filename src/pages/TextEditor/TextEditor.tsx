@@ -1,5 +1,5 @@
 import styled from "@emotion/styled";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import { EColors } from "../../globalStyle";
 
 const TextEditorPure = () => {

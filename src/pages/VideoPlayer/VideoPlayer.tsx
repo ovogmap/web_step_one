@@ -94,33 +94,30 @@ const VideoPlayer: React.FC<VideoPlayerProps> = ({ video }) => {
     [onTenSencondeBack, onTenSencondeJump]
   );
 
-  useEffect(() => {
-    videoRef.current?.addEventListener("loadedmetadata", () => {
-      if (!videoRef.current) return;
-      const duration = videoRef.current.duration;
-      const videoDuration = Math.floor(duration);
-      setEndTime(videoDuration);
-    });
+  const videoCureentTimeChange = useCallback(() => {
+    if (!videoRef.current) return;
+    setCurrentTime(Math.floor(videoRef.current.currentTime));
+  }, []);
 
-    videoRef.current?.addEventListener("timeupdate", () => {
-      if (!videoRef.current) return;
-      setCurrentTime(Math.floor(videoRef.current.currentTime));
-    });
+  const videoEndTime = useCallback(() => {
+    if (!videoRef.current) return;
+    const duration = videoRef.current.duration;
+    const videoDuration = Math.floor(duration);
+    setEndTime(videoDuration);
+  }, []);
+
+  useEffect(() => {
+    if (!videoRef?.current) return;
+    const ref = videoRef.current;
+    ref.addEventListener("loadedmetadata", videoEndTime);
+
+    ref.addEventListener("timeupdate", videoCureentTimeChange);
 
     return () => {
-      videoRef.current?.removeEventListener("loadedmetadata", () => {
-        if (!videoRef.current) return;
-        const duration = videoRef.current.duration;
-        const videoDuration = Math.floor(duration);
-        setEndTime(videoDuration);
-      });
-
-      videoRef.current?.removeEventListener("timeupdate", () => {
-        if (!videoRef.current) return;
-        setCurrentTime(Math.floor(videoRef.current.currentTime));
-      });
+      ref.removeEventListener("loadedmetadata", videoEndTime);
+      ref.removeEventListener("timeupdate", videoCureentTimeChange);
     };
-  }, [videoRef]);
+  }, [videoRef, videoCureentTimeChange, videoEndTime]);
 
   useEffect(() => {
     window.addEventListener(
